@@ -15,14 +15,16 @@ Console.WriteLine("Digite mensagem e aperte <ENTER>");
 
 while (true)
 {
+
+   
+    Console.WriteLine("Digite nome:");
     string message = Console.ReadLine();
 
     if (string.IsNullOrEmpty(message))
         break;
+    var aluno = new Aluno { Id = 1, Nome = message };
 
-    var aluno = new Aluno { Id = 1, Nome = "Ilola Nicolau João" };
-
-    message=JsonSerializer.Serialize(aluno);
+    message =JsonSerializer.Serialize(aluno);
 
     var body = Encoding.UTF8.GetBytes(message);
 
